@@ -51,8 +51,13 @@ services:
         ipv4_address: 172.25.0.13
 
   spark:
-    image: gettyimages/spark:2.4.1-hadoop-3.0
+    image: tabulario/spark-iceberg
     container_name: spark
+    ports:
+      - 5000:5000
+      - 4040:4040
+      - 4041:4041
+      - 18080:18080
     volumes:
       - ./:/app
     networks:
